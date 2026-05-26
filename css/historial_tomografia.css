@@ -1,0 +1,89 @@
+/* Contenedor principal sin sidebar */
+.dashboard-wrapper {
+    display: block; /* antes era flex */
+    min-height: 100vh;
+    padding: 20px; /* agrega padding general */
+}
+
+/* Contenido principal */
+.main-content {
+    margin: 0; /* quitar margin-left porque no hay sidebar */
+    padding: 20px;
+    background-color: #f3f4f6;
+}
+
+/* Botón volver al menú */
+.btn-volver {
+    display: inline-block;
+    margin-bottom: 15px;
+    padding: 8px 12px;
+    background-color: #6b7280;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Filtros */
+.filtros {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.filtros input, .filtros select {
+    padding: 8px;
+    flex: 1 1 150px;
+}
+
+/* Botones */
+.botones {
+    margin-bottom: 20px;
+}
+
+.botones button {
+    margin-right: 10px;
+    padding: 10px 15px;
+    border: none;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-rojo { background-color: #ef4444; }
+.btn-morado { background-color: #8b5cf6; }
+.btn-azul { background-color: #3b82f6; }
+.btn-verde { background-color: #22c55e; }
+
+/* Tabla */
+.tabla-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 1200px;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+.btn-editar {
+    background-color: orange;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+}
+
+.btn-eliminar {
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+}

@@ -1,0 +1,386 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #eaf5ff;
+    color: #1b2b44;
+}
+
+/* BARRA SUPERIOR */
+.topbar {
+    width: 100%;
+    height: 43px;
+    background: #1f3b63;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 28px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.topbar-title {
+    font-family: Georgia, serif;
+    font-size: 17px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.topbar-menu {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.topbar-menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.topbar-menu a:hover,
+.topbar-menu a.active {
+    color: #bcd6ff;
+}
+
+.topbar-menu .salir {
+    background: #e82935;
+    padding: 11px 17px;
+    border-radius: 8px;
+    color: white;
+}
+
+/* CABECERA */
+.hero {
+    margin-top: 43px;
+    height: 210px;
+    background:
+        linear-gradient(rgba(15, 36, 62, 0.72), rgba(15, 36, 62, 0.72)),
+        url("../img/fondo_mantenimiento.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-overlay {
+    height: 100%;
+    padding-left: 95px;
+    padding-top: 38px;
+    color: white;
+}
+
+.hero-overlay span {
+    width: fit-content;
+    background: rgba(255, 255, 255, 0.25);
+    padding: 7px 12px;
+    border-radius: 18px;
+    font-size: 10px;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 22px;
+}
+
+.hero-overlay h1 {
+    font-size: 34px;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.hero-overlay p {
+    font-size: 13px;
+    color: #f2f6ff;
+    max-width: 900px;
+    line-height: 1.4;
+}
+
+/* CONTENIDO */
+.contenido {
+    min-height: calc(100vh - 253px);
+    background:
+        linear-gradient(rgba(234, 245, 255, 0.90), rgba(234, 245, 255, 0.90)),
+        url("../img/fondo_sistema.jpg");
+    background-size: cover;
+    background-position: center;
+    padding: 55px 0 45px 0;
+}
+
+/* PANEL */
+.panel {
+    width: 59%;
+    min-width: 760px;
+    margin: 0 auto 26px auto;
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 24px 26px;
+    border-top: 8px solid #1f3b63;
+    box-shadow: 0 15px 35px rgba(31, 59, 99, 0.18);
+}
+
+.panel-formulario {
+    margin-top: -80px;
+}
+
+.panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+
+.panel-header h2 {
+    color: #193f92;
+    font-size: 26px;
+    font-weight: 800;
+}
+
+.btn-volver {
+    background: #697991;
+    color: white;
+    text-decoration: none;
+    padding: 11px 15px;
+    border-radius: 7px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.btn-volver:hover {
+    background: #53647a;
+}
+
+/* ALERTAS */
+.alerta {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.alerta.exito {
+    background: #e8f8ee;
+    color: #12803a;
+    border: 1px solid #bce8cc;
+}
+
+.alerta.error {
+    background: #ffe9e9;
+    color: #c4212b;
+    border: 1px solid #ffc6c6;
+}
+
+/* FORMULARIO */
+.form-mantenimiento {
+    border: 1px solid #d7e3f3;
+    border-radius: 14px;
+    padding: 18px;
+    background: #fbfdff;
+}
+
+.form-mantenimiento select,
+.form-mantenimiento input,
+.form-mantenimiento textarea {
+    width: 100%;
+    border: 1px solid #c6d5e9;
+    border-radius: 9px;
+    outline: none;
+    font-size: 12px;
+    margin-bottom: 13px;
+    background: white;
+    color: #222;
+}
+
+.form-mantenimiento select,
+.form-mantenimiento input {
+    height: 38px;
+    padding: 0 13px;
+}
+
+.form-mantenimiento textarea {
+    min-height: 65px;
+    resize: vertical;
+    padding: 12px 13px;
+}
+
+.form-mantenimiento button {
+    width: 100%;
+    height: 38px;
+    border: none;
+    border-radius: 9px;
+    background: #2859e8;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.form-mantenimiento button:hover {
+    background: #1746c9;
+}
+
+/* LISTADO */
+.listado-panel {
+    border-top: 6px solid #2859e8;
+}
+
+.listado-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+
+.listado-header h2 {
+    color: #193f92;
+    font-size: 22px;
+    font-weight: 800;
+}
+
+.filtro-form select {
+    height: 38px;
+    min-width: 240px;
+    border: 1px solid #c6d5e9;
+    border-radius: 9px;
+    padding: 0 12px;
+    font-size: 12px;
+    outline: none;
+}
+
+.tabla-contenedor {
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+}
+
+thead {
+    background: #1f3b63;
+    color: white;
+}
+
+th,
+td {
+    padding: 10px;
+    border: 1px solid #dbe5f1;
+    text-align: left;
+}
+
+tbody tr:nth-child(even) {
+    background: #f6f9ff;
+}
+
+tbody tr:hover {
+    background: #edf4ff;
+}
+
+td input {
+    width: 100%;
+    height: 32px;
+    border: 1px solid #c6d5e9;
+    border-radius: 7px;
+    padding: 0 8px;
+    font-size: 12px;
+}
+
+.estado-activo {
+    background: #dff8e8;
+    color: #12803a;
+    padding: 5px 9px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.acciones {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-editar {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 8px 10px;
+    border-radius: 7px;
+    font-size: 11px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.btn-eliminar {
+    background: #e82935;
+    color: white;
+    text-decoration: none;
+    padding: 8px 10px;
+    border-radius: 7px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.sin-registros {
+    text-align: center;
+    color: #777;
+    padding: 22px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .topbar {
+        height: auto;
+        padding: 12px;
+        flex-direction: column;
+        gap: 10px;
+        position: static;
+    }
+
+    .topbar-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .hero {
+        margin-top: 0;
+        height: auto;
+    }
+
+    .hero-overlay {
+        padding: 35px 22px;
+    }
+
+    .hero-overlay h1 {
+        font-size: 26px;
+    }
+
+    .contenido {
+        padding-top: 35px;
+    }
+
+    .panel {
+        width: 92%;
+        min-width: auto;
+        padding: 20px;
+    }
+
+    .panel-formulario {
+        margin-top: -25px;
+    }
+
+    .panel-header,
+    .listado-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+}
