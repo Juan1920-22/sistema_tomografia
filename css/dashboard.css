@@ -1,67 +1,112 @@
+/* --- DASHBOARD CSS MEJORADO --- */
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f4f6f8;
+    font-family: 'Inter', sans-serif;
+    background: #f4f6fa;
 }
-.dashboard-wrapper {
+
+/* Barra superior */
+.topbar {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1e3a5f;
+    padding: 15px 40px;
+    color: white;
 }
-.sidebar {
-    width: 220px;
-    background: #1f2937;
-    color: #fff;
-    min-height: 100vh;
-}
-.sidebar-header {
-    padding: 20px;
-    background: #111827;
-    text-align: center;
-}
-.sidebar-menu ul {
-    list-style: none;
-    padding: 0;
-}
-.sidebar-menu li {
-    padding: 15px 20px;
-}
-.sidebar-menu li a {
-    color: #fff;
-    text-decoration: none;
-    display: block;
-}
-.sidebar-menu li a:hover {
-    background: #374151;
-    border-radius: 4px;
-}
-.main-content {
-    flex: 1;
-    padding: 30px;
-}
-.cards {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-.card {
-    flex: 1 1 200px;
-    background: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
-    text-align: center;
-}
-.card h3 {
-    margin: 10px 0;
-}
-.card p {
-    font-size: 24px;
+.topbar .logo {
+    font-size: 1.5em;
     font-weight: bold;
-    margin: 5px 0 0 0;
 }
-.card-icon {
-    font-size: 40px;
-    margin-bottom: 10px;
+.topbar nav a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: 0.3s;
 }
-.card-blue { border-top: 5px solid #3b82f6; }
-.card-green { border-top: 5px solid #10b981; }
-.card-red { border-top: 5px solid #ef4444; }
+.topbar nav a:hover {
+    background: rgba(255,255,255,0.2);
+}
+.topbar .btn-salir {
+    background: #e63946;
+    color: white;
+}
+
+/* Hero */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 380px;
+    overflow: hidden;
+}
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.7);
+}
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    background: rgba(0,0,0,0.5);
+    padding: 30px 50px;
+    border-radius: 10px;
+}
+.hero-text h1 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+}
+.hero-text p {
+    font-size: 1.2em;
+}
+
+/* Módulos flotando sobre hero */
+.modulos {
+    display: flex;
+    justify-content: center;
+    margin: -80px auto 50px auto;
+    gap: 20px;
+    max-width: 1000px;
+    z-index: 10;
+    position: relative;
+}
+.modulo {
+    flex: 1;
+    background: rgba(255,255,255,0.95);
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    min-width: 180px;
+    box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+}
+.modulo span {
+    font-size: 1.5em;
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+}
+.modulo:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 30px rgba(0,0,0,0.25);
+}
+.modulo h3 {
+    font-size: 1.2em;
+    margin-bottom: 12px;
+}
+.modulo p {
+    font-size: 0.95em;
+}
+/* Colores por módulo */
+.modulo.registrar { background: #0c449e; color: #ffffff; }
+.modulo.historial { background: #02724d; color: #ffffff; }
+.modulo.reportes { background: #ff0000; color: #ffffff; }
+.modulo.mantenimiento { background: #ff7300; color: #ffffff; }

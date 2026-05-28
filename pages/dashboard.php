@@ -4,75 +4,59 @@ if(!isset($_SESSION['user_id'])){
     header("Location: login.php");
     exit;
 }
-
 $usuario = $_SESSION['user_name'];
-
-// Conexión segura
-$conn = new mysqli("localhost", "root", "", "sistema_tomografia");
-if($conn->connect_error) die("Conexión fallida: ".$conn->connect_error);
-
-// Tomografías registradas
-$total_tomografias = $conn->query("SELECT COUNT(*) as total FROM tomografias")->fetch_assoc()['total'];
-
-// Pacientes activos (DISTINCT historia_clinica)
-$total_pacientes = $conn->query("SELECT COUNT(DISTINCT historia_clinica) as total FROM tomografias WHERE condicion='Activo'")->fetch_assoc()['total'];
-
-// Reportes pendientes
-$total_reportes = $conn->query("SELECT COUNT(*) as total FROM tomografias WHERE condicion='Pendiente'")->fetch_assoc()['total'];
-
-$conn->close();
 ?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dashboard - Sistema Tomografía</title>
-<link rel="stylesheet" href="../css/dashboard.css">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="../css/dashboard.css">
 </head>
 <body>
-<div class="dashboard-wrapper">
+<header class="topbar">
+    <div class="logo">HOSPITAL SAN JOSÉ DE CHINCHA</div>
+    <nav>
+        <a href="dashboard.php">Inicio</a>
+        <a href="registrar.php">Registrar</a>
+        <a href="historial_tomografia.php">Historial</a>
+        <a href="reportes.php">Reportes</a>
+        <a href="mantenimiento.php">Mantenimiento</a>
+        <a href="logout.php" class="btn-salir">Salir</a>
+    </nav>
+</header>
 
-    <!-- Menú lateral -->
-    <aside class="sidebar">
-        <div class="sidebar-header">
-            <h2>Bienvenido</h2>
-            <p>Sistema de Tomografía</p>
-        </div>
-        <nav class="sidebar-menu">
-            <ul>
-                <li><a href="registrar.php">Registrar Tomografía</a></li>
-                <li><a href="historial_tomografia.php">Historial</a></li>
-                <li><a href="reportes.php">Reportes</a></li>
-                <li><a href="mantenimiento.php">Mantenimiento</a></li>
-                <li><a href="logout.php">Cerrar Sesión</a></li>
-            </ul>
-        </nav>
-    </aside>
+<section class="hero">
+    <img src="../img/imagen1.png" alt="Hospital" class="hero-img">
+    <div class="hero-text">
+        <h1>Sistema de Gestión de Tomografía</h1>
+        <p>Optimiza el registro, consulta y seguimiento de las atenciones tomográficas del Área de Diagnóstico por Imágenes.</p>
+    </div>
+</section>
 
-    <!-- Contenido principal -->
-    <main class="main-content">
-        <h1>Dashboard</h1>
-        <div class="cards">
-            <div class="card card-blue">
-                <div class="card-icon"><i class="fas fa-file-medical"></i></div>
-                <h3>Tomografías Registradas</h3>
-                <p><?php echo $total_tomografias; ?></p>
-            </div>
-            <div class="card card-green">
-                <div class="card-icon"><i class="fas fa-user-check"></i></div>
-                <h3>Pacientes Activos</h3>
-                <p><?php echo $total_pacientes; ?></p>
-            </div>
-            <div class="card card-red">
-                <div class="card-icon"><i class="fas fa-clock"></i></div>
-                <h3>Reportes Pendientes</h3>
-                <p><?php echo $total_reportes; ?></p>
-            </div>
-        </div>
-    </main>
-</div>
+<section class="modulos">
+    <a href="registrar.php" class="modulo registrar">
+        <h3>Registrar</h3>
+        <p>Ingresar datos del paciente, examen, fecha y observaciones.</p>
+        <span>➜</span>
+    </a>
+    <a href="historial_tomografia.php" class="modulo historial">
+        <h3>Historial</h3>
+        <p>Buscar, consultar y editar los registros almacenados.</p>
+        <span>➜</span>
+    </a>
+    <a href="reportes.php" class="modulo reportes">
+        <h3>Reportes</h3>
+        <p>Generar informes estadísticos y reportes por servicio, por Tomografía, por CPT-Code y económico</p>
+        <span>➜</span>
+    </a>
+    <a href="mantenimiento.php" class="modulo mantenimiento">
+        <h3>Mantenimiento</h3>
+        <p>Administrar configuraciones, usuarios y datos generales del sistema.</p>
+        <span>➜</span>
+    </a>
+</section>
 </body>
 </html>
