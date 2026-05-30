@@ -29,7 +29,7 @@ $usuario = $_SESSION['user_name'];
 </header>
 
 <section class="hero">
-    <img src="../img/imagen1.png" alt="Hospital" class="hero-img">
+    <img src="../img/images2.jfif" alt="Hospital" class="hero-img">
     <div class="hero-text">
         <h1>Sistema de Gestión de Tomografía</h1>
         <p>Optimiza el registro, consulta y seguimiento de las atenciones tomográficas del Área de Diagnóstico por Imágenes.</p>

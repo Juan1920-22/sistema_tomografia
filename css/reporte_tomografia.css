@@ -1,0 +1,110 @@
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:Arial,sans-serif;background:#f0f4f8;color:#1b2b44;font-size:13px;}
+
+/* CONTROLES */
+.controles{background:#fff;border-bottom:2px solid #dde3ed;padding:12px 20px;display:flex;align-items:center;flex-wrap:wrap;gap:14px;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.07);}
+.btn-volver{background:#687891;color:#fff;text-decoration:none;padding:8px 16px;border-radius:6px;font-weight:bold;font-size:12px;white-space:nowrap;}
+.btn-volver:hover{background:#53647a;}
+.form-filtro{display:flex;align-items:flex-end;flex-wrap:wrap;gap:10px;}
+.filtro-grupo{display:flex;flex-direction:column;gap:3px;}
+.filtro-grupo label{font-size:10px;font-weight:700;text-transform:uppercase;color:#344763;letter-spacing:.04em;}
+.filtro-grupo select{height:34px;padding:0 10px;border:1px solid #bdd0e8;border-radius:5px;font-size:12px;color:#1f2e44;background:#fff;min-width:110px;}
+.filtro-grupo select:focus{outline:none;border-color:#2d63e8;}
+.btn-generar {background:#1565c0;color:#fff;border:none;padding:8px 16px;border-radius:6px;cursor:pointer;font-weight:bold;font-size:12px;}
+.btn-generar:hover{background:#0d47a1;}
+.btn-imprimir{background:#28a745;color:#fff;border:none;padding:8px 16px;border-radius:6px;cursor:pointer;font-weight:bold;font-size:12px;}
+.btn-imprimir:hover{background:#1e7e34;}
+.btn-pdf     {background:#dc3545;color:#fff;border:none;padding:8px 16px;border-radius:6px;cursor:pointer;font-weight:bold;font-size:12px;}
+.btn-pdf:hover{background:#b02a37;}
+
+/* CABECERA */
+.cabecera-reporte{text-align:center;padding:18px 20px 8px;background:#fff;}
+.hospital-nombre{font-size:17px;font-weight:800;color:#173f92;letter-spacing:.5px;}
+.reporte-titulo{font-size:12px;font-weight:700;color:#1b2b44;margin-top:3px;text-transform:uppercase;}
+.reporte-periodo{font-size:11px;color:#344763;margin-top:2px;font-weight:600;}
+
+/* PAGINACIÓN */
+.paginacion{display:flex;align-items:center;gap:12px;padding:8px 20px;background:#e8f0fe;border-bottom:1px solid #c5d8f8;}
+.pag-info{font-size:13px;color:#173f92;font-weight:600;}
+.pag-info strong{color:#1565c0;}
+.btn-pag{padding:5px 14px;background:#1565c0;color:#fff;text-decoration:none;border-radius:5px;font-weight:bold;font-size:12px;}
+.btn-pag:hover{background:#0d47a1;}
+
+/* TABLA */
+.tabla-wrapper{padding:12px 14px 24px;background:#fff;}
+.tabla-scroll{overflow-x:auto;}
+
+.tabla-reporte{border-collapse:collapse;width:100%;min-width:900px;font-size:10.5px;}
+
+/* Header */
+.tabla-reporte thead tr:first-child th{background:#1f3b63;color:#fff;padding:6px 3px;text-align:center;border:1px solid #2e5190;}
+.tabla-reporte thead tr:last-child  th{background:#1f3b63;color:#fff;padding:4px 2px;text-align:center;border:1px solid #2e5190;}
+.th-exam      {min-width:105px;font-size:11px;}
+.th-tipo      {min-width:90px;font-size:10px;}
+.th-dia       {min-width:20px;width:22px;font-size:9px;padding:3px 1px!important;}
+.th-total     {min-width:44px;background:#e6a817!important;color:#fff!important;}
+.th-total-serv{min-width:50px;background:#28a745!important;color:#fff!important;}
+.th-dias-label{font-size:10px;letter-spacing:.04em;}
+
+/* Celdas cuerpo */
+tbody td{border:1px solid #cfd8e8;padding:3px 2px;text-align:center;font-size:10px;vertical-align:middle;}
+
+.td-examen{font-size:10px;font-weight:700;color:#173f92;text-align:center;vertical-align:middle;padding:4px 5px;border:1px solid #b0c8e8;}
+.bg-par  {background:#eef3fb;}
+.bg-impar{background:#e4edf8;}
+
+.td-tipo{font-size:9px;font-weight:600;color:#344763;text-align:center;background:#f6f9ff;padding:3px 4px;white-space:nowrap;}
+
+.td-num{color:#444;}
+.td-val{background:#fff8e1;color:#795400;font-weight:700;}
+
+.td-total-tipo{background:#f5f5f5;font-weight:600;min-width:36px;}
+.td-total-am  {background:#fff3cd!important;color:#7a5200;font-weight:700;}
+
+/* TOTAL SERV — abarca las 5 filas */
+.td-total-serv{background:#f5f5f5;font-weight:700;vertical-align:middle;min-width:50px;}
+.td-total-vd  {background:#d4edda!important;color:#155724;font-weight:800;font-size:12px;}
+
+/* FILA TOTAL DIARIO */
+.tr-total-diario td{background:#1f3b63;color:#fff;font-weight:700;font-size:10px;border:1px solid #2e5190;text-align:center;padding:4px 2px;}
+.td-label-total{font-size:10px;letter-spacing:.04em;text-align:center;}
+.td-dia-total{color:#fff;}
+.td-dia-val{background:#2d5ab0!important;color:#fff!important;font-weight:700;}
+.td-gran-total-am{background:#e6a817!important;color:#fff!important;font-size:10px;text-align:center;line-height:1.5;min-width:44px;}
+.td-gran-total-vd{background:#28a745!important;color:#fff!important;font-size:10px;text-align:center;line-height:1.5;min-width:50px;}
+
+/* PRINT */
+.only-print{display:none;}
+@media print{
+    *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important;}
+    body{background:#fff;font-size:8px;}
+    .no-print{display:none!important;}
+    .only-print{display:block!important;}
+    .cabecera-reporte{padding:8px 4px 4px;}
+    .hospital-nombre{font-size:13px;}
+    .reporte-titulo{font-size:10px;}
+    .reporte-periodo{font-size:9px;}
+    .tabla-wrapper{padding:4px 2px;}
+    .tabla-scroll{overflow:visible;}
+    .tabla-reporte{min-width:unset;width:100%;font-size:6.5px;}
+    .tabla-reporte thead tr:first-child th,
+    .tabla-reporte thead tr:last-child  th{padding:2px 1px;}
+    .th-exam{min-width:55px;}.th-tipo{min-width:50px;}
+    .th-dia{min-width:12px;width:13px;font-size:6px;padding:2px 1px!important;}
+    .th-total{min-width:26px;}.th-total-serv{min-width:28px;}
+    tbody td{padding:1px;font-size:6.5px;}
+    .td-examen{font-size:6.5px;padding:2px 2px;}
+    .td-tipo{font-size:6px;padding:1px 2px;}
+    .td-gran-total-am,.td-gran-total-vd{font-size:7px;}
+    tr{page-break-inside:avoid;}
+    thead{display:table-header-group;}
+    @page{size:A4 landscape;margin:6mm 5mm;}
+}
+
+/* Estilos específicos tomografía */
+.th-exam{min-width:140px;font-size:11px;}
+.th-cond{min-width:100px;font-size:10px;}
+.td-examen{font-size:10px;font-weight:700;color:#173f92;text-align:center;vertical-align:middle;padding:4px 5px;border:1px solid #b0c8e8;}
+.td-cond{font-size:9px;font-weight:600;color:#344763;text-align:center;background:#f6f9ff;padding:3px 4px;white-space:nowrap;}
+.td-total-cond{background:#f5f5f5;font-weight:600;min-width:36px;}
+.td-total-ex{background:#f5f5f5;font-weight:700;vertical-align:middle;min-width:50px;}

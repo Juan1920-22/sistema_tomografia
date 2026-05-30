@@ -212,6 +212,7 @@ $resultado = $conn->query($sqlListado);
                 <option value="tipo_atencion">Tipo de atención</option>
                 <option value="medico">Médico de turno</option>
                 <option value="examen">Examen solicitado</option>
+                
             </select>
 
             <input type="text" name="nombre" placeholder="Ingrese nombre" required>
